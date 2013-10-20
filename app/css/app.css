@@ -6,55 +6,17 @@ html {
     overflow-y: scroll;
 }
 
+/* anchor tags should use pointer like buttons */
+a {
+    cursor: pointer;
+}
+
 /** this allows us to display nothing until angular has applied changes to the dom
     without this we see what the dom wants to display first, and then get an update
     within milliseconds once angular is finished. -- it's the "funny flicker effect"
  **/
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none !important;
-}
-
-/** supports mail/messaging feature **/
-.mailSection:hover {
-    background-color: green;
-    color: white;
-}
-
-.mailSection .unreadMail {
-    color: white;
-}
-
-.mailDropdown, hr {
-    margin: 0px;
-}
-
-.mailText {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.mailSection {
-    border-bottom-left-radius: 1px;
-    border-bottom-right-radius: 1px;
-    border-top-left-radius: 1px;
-    border-top-right-radius: 1px;
-}
-
-.mailDropdown {
-    border-bottom-color: rgb(233, 233, 233);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-top-color: rgb(51, 51, 51);
-    border-top-style: none;
-    border-top-width: 0px;
-    color: rgb(51, 51, 51);
-
-    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-    font-size: 11px;
-    left: 0px;
-    width: 352px;
 }
 
 /** **
@@ -129,10 +91,26 @@ supports grid feature
     list-style-type: none;
 }
 
-/******** Footer ********/
-.ngFooterPanel {
-    /** height: 30px !important; **/
+/***
+   modal / login / password
+**/
+
+.modal-body {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
 }
 
+.modal-body * {
+    display: block;
+    margin: 10px 0 5px 0;
+    width: 95%;
+}
 
+#password {
+    display: inline;
+    float: left;
+    max-width: 69%;
+    min-width: 63px;
+}
 
