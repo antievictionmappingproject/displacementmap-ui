@@ -29,10 +29,10 @@
 ### For hosting
 
 * A web server - Can be anything Python SimpleHTTPServer, NodeJS, Apache, Google App Engine.
-  - Just start the server and navigate to app/index.html
+  - Just start the server and navigate to ui/index.html
 
 ### For LESS compilation (only needed if modifying LESS)
-* The project contains all LESS-compiled, vendor provided, and custom styling under app/css.  If you wish to contribute or modify LESS, you should run build.sh, which compiles the less code.  This requires the following:
+* The project contains all LESS-compiled, vendor provided, and custom styling under ui/css.  If you wish to contribute or modify LESS, you should run build.sh, which compiles the less code.  This requires the following:
   - Node Package Manager (npm).  Run "sudo apt-get install npm"
   - recess, jslint, and a host of other packages.  Run "npm install" from the bootstrap directory (That's it, with the latest release Bootstrap simplified things a bit)
 
@@ -57,7 +57,7 @@
 
 ***
 
-* Please submit all pull requests against *-wip branches.  If it includes LESS changes, please compile the less to app/css and include the compiled css in your changes.
+* Please submit all pull requests against *-wip branches.  If it includes LESS changes, please compile the less to ui/css and include the compiled css in your changes.
 * Issues are tracked in github issues.
 * NOTE:  All changes to master are automatically updated to gh-pages (http://robertjchristian.github.com/angular-enterprise-seed/#/) within 24 hours.
 
