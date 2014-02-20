@@ -1,0 +1,26 @@
+<div class="panel panel-default" ng-model="samplePerson">
+  <div class="panel-heading">Person: {{samplePerson.name}}</div>
+  <div class="panel-body">
+  	Companies Owned
+  	<ul>
+  		<li ng-repeat="item in samplePerson.companies">{{item || "none"}}</li>
+  	</ul>
+  	Properties Owned
+  	<ul>
+  		<li ng-repeat="item in samplePerson.properties">{{item || "none"}}</li>
+  	</ul>
+  	Evictions Enacted
+  	<ul>
+  		<li ng-repeat="item in samplePerson.evictions">{{item || none}}</li>
+  	</ul>
+  </div>
+</div>
+
+
+<!--
+	  	<tabel>
+    <tr><td>Companies Owned</td><td>Hello</td></tr>
+    <tr><td>Properties Owned</td><td>Hello</td></tr>
+    <tr><td>Evictions Enacted</td><td>Hello</td></tr>
+    </tabel>	
+    -->

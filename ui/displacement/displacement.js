@@ -97,17 +97,11 @@ function createDataGrid($scope, $http, dataUrl) {
 
 
 
-var playground = myApp.controller('PlaygroundCtrl', ['$scope', '$routeParams', '$http', 'GraphDataService', function ($scope, $routeParams, $http,gd) {
+var displacement = myApp.controller('DisplacementCtrol', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
         // add service name to the scope...
-        window.a = gd;
         $scope.widgetName = $routeParams.widgetName;
-        $scope.widgetUrl = "playground/" + $routeParams.widgetName + ".html"
-        $scope.selectedQuestion = 0;
-        $scope.doSearch = function(str){console.log(str)}
-        $scope.queryStatus = "";
-        $scope.questionUrl = "playground/"+ $scope.selectedQuestion +".html";
-
+        $scope.widgetUrl = "displacement/" + $routeParams.widgetName + ".html"
         // tree support
         $scope.deleteNode = function (data) {
             data.nodes = [];
@@ -123,7 +117,7 @@ var playground = myApp.controller('PlaygroundCtrl', ['$scope', '$routeParams', '
 
 
         // data grid
-        createDataGrid($scope, $http, 'playground/emp.json');
+        createDataGrid($scope, $http, 'displacement/emp.json');
 
         $scope.setPage = function (pageNo) {
             $scope.currentPage = pageNo;

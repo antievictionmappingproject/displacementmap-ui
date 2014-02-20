@@ -97,17 +97,11 @@ function createDataGrid($scope, $http, dataUrl) {
 
 
 
-var playground = myApp.controller('PlaygroundCtrl', ['$scope', '$routeParams', '$http', 'GraphDataService', function ($scope, $routeParams, $http,gd) {
+var playground = myApp.controller('PlaygroundCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
         // add service name to the scope...
-        window.a = gd;
         $scope.widgetName = $routeParams.widgetName;
         $scope.widgetUrl = "playground/" + $routeParams.widgetName + ".html"
-        $scope.selectedQuestion = 0;
-        $scope.doSearch = function(str){console.log(str)}
-        $scope.queryStatus = "";
-        $scope.questionUrl = "playground/"+ $scope.selectedQuestion +".html";
-
         // tree support
         $scope.deleteNode = function (data) {
             data.nodes = [];

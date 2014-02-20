@@ -1,0 +1,32 @@
+<h3>Exploring SF evictions.</h3>
+<h4>Ask questions. View the answers. Ask follow up questions.</h4>
+<hr style="margin-bottom: 2em;">
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6">
+			<h3>Question: </h3>
+			<form>
+				<select class="form-control" ng-model="selectedQuestion">
+					<option selected value = "ownsAddress.html">Who owns the property at a particular address?</option>
+					<option value = "propertiesOfOwner.html">What properties does someone own?</option>
+				</select>
+			</form>
+			<br>
+			<div class="ng-include: 'playground/'+ selectedQuestion"></div>
+			<h3>Answer: </h3>
+		</div>
+	</div>
+</div>
+<div>
+</div>
+<hr style="margin-bottom: 2em;">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-9">
+           <h3>See Results</h3>
+        </div>
+        <div class="col-xs-3">
+        	<h3>Found Items</h3>
+        </div>
+    </div>
+</div>

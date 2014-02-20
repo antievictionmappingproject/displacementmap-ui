@@ -4,6 +4,7 @@
 var myApp = angular.module('myApp',
     [   'myApp.filters',
         'myApp.directives', // custom directives
+        'displacement.directives', // custom directives
         'ngGrid', // angular grid
         'ui', // angular ui
         'ngSanitize', // for html-bind in ckeditor
