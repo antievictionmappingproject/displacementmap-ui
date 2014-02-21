@@ -106,10 +106,11 @@ myApp.factory('GraphDataService',
                 return {name:"not yet DLed"}
             },
             query: function(str,callback){
-                //actually make request;
-                var res = "something"
+                var res = "something";
+                if(str=="actualCypher1"){res = {type:"person",data:samplePerson}}
+                if(str=="actualCypher2"){res = {type:"propertyList",data:samplePerson.properties}}
                 var df = function(){
-                    console.log("dBang!");
+                   callback(res);
                 }
                 _.delay(df,1000)
             }

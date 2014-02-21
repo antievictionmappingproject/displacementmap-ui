@@ -7,13 +7,24 @@
 			<h3>Question: </h3>
 			<form>
 				<select class="form-control" ng-model="selectedQuestion">
-					<option selected value = "ownsAddress.html">Who owns the property at a particular address?</option>
-					<option value = "propertiesOfOwner.html">What properties does someone own?</option>
+					<option selected="selected" value = "1">Who owns the property at a particular address?</option>
+					<option value = "2">What properties does someone own?</option>
 				</select>
 			</form>
 			<br>
-			<div class="ng-include: 'playground/'+ selectedQuestion"></div>
-			<h3>Answer: </h3>
+			<!--div class="ng-include: 'playground/'+ selectedQuestion"></div -->
+			<div ng-show="selectedQuestion == 1" class="input-group">
+				<span class="input-group-addon">Street Address</span>
+				<input type="text" class="form-control">
+				<span ng-click="mainQuestion('actualCypher1')" class="input-group-addon"><i class="glyphicon glyphicon-search glyphicon-white"></i></span>
+			</div>
+			<div ng-show="selectedQuestion == 2" class="input-group">
+				<span class="input-group-addon">Owner Name</span>
+				<input type="text" class="form-control">
+				<span ng-click="mainQuestion('actualCypher2')" class="input-group-addon"><i class="glyphicon glyphicon-search glyphicon-white"></i></span>
+			</div>
+
+			<h3>Answer:{{questionLabel}}</h3>
 		</div>
 	</div>
 </div>
@@ -22,11 +33,16 @@
 <hr style="margin-bottom: 2em;">
 <div class="container">
     <div class="row">
-        <div class="col-xs-9">
-           <h3>See Results</h3>
-        </div>
         <div class="col-xs-3">
-        	<h3>Found Items</h3>
+           <h3>Previous Answers</h3>
+           <div class="list-group">
+           		<a class="list-group-item" ng-repeat="i in answeredQuestions">A: {{i.type}}</a>
+           </div>
+           <div ng-repeat="i in answeredQuestions"><div answered-question></div></div>
+        </div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-3">
+        	<h3>View</h3>
         </div>
     </div>
 </div>

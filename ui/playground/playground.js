@@ -104,10 +104,21 @@ var playground = myApp.controller('PlaygroundCtrl', ['$scope', '$routeParams', '
         $scope.widgetName = $routeParams.widgetName;
         $scope.widgetUrl = "playground/" + $routeParams.widgetName + ".html"
         $scope.selectedQuestion = 0;
-        $scope.doSearch = function(str){console.log(str)}
-        $scope.queryStatus = "";
-        $scope.questionUrl = "playground/"+ $scope.selectedQuestion +".html";
+        $scope.questionStatus = "ready";
+        $scope.questionLabel = ""
+        $scope.mainQuestion = function(str){
+            //set some "loading" notification
+            gd.query(str,function(res){
+                console.log("got to callback with",res)
+               //unset loading notification;
 
+               //display h1-ish answer;
+               
+               //load question
+               $scope.$apply(function(){$scope.answeredQuestions.push(res);})
+            })
+        }
+        $scope.answeredQuestions = [];
         // tree support
         $scope.deleteNode = function (data) {
             data.nodes = [];
