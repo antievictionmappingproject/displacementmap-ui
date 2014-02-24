@@ -106,9 +106,9 @@ var playground = myApp.controller('PlaygroundCtrl', ['$scope', '$routeParams', '
         $scope.selectedQuestion = 0;
         $scope.questionStatus = "ready";
         $scope.questionLabel = ""
-        $scope.mainQuestion = function(str){
+        $scope.mainQuestion = function(question){
             //set some "loading" notification
-            gd.query(str,function(res){
+            gd.query(question,function(res){
                 console.log("got to callback with",res)
                //unset loading notification;
 

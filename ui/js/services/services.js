@@ -51,7 +51,6 @@ myApp.factory('GraphDataService',
             neoID: 13000
         }
         var cache    = {};
-        window.cache = cache
         var nIntsAsString = function(n){
             var res = "";
              _.times(n,function(){
@@ -94,6 +93,19 @@ myApp.factory('GraphDataService',
             }
             cache[data.neoID] = data;
         })
+        var questions = {};
+        questions[1] = {
+            cypher:"actualCypherString",
+            prettyAnswer:function(data){
+                return data.owner.name + " owns " + data.property.address;
+            }
+        }
+        questions[2] = {
+            cypher:"actualCypherString",
+            prettyAnswer:function(data){
+                return data.owner.name + " owns " + data.owner.properties.length + " properties";
+            }
+        }
         //* public *//
         return {
             dataById: function(id){
@@ -105,13 +117,19 @@ myApp.factory('GraphDataService',
                 //$http-$resource malarky, faked for now;
                 return {name:"not yet DLed"}
             },
-            query: function(str,callback){
+            query: function(question,callback){
                 var res = "something";
-                if(str=="actualCypher1"){res = {type:"person",data:samplePerson}}
-                if(str=="actualCypher2"){res = {type:"propertyList",data:samplePerson.properties}}
+                if(question==1){res = {
+                    owner:samplePerson,
+                    property:sampleProperty,
+                    
+                }}
+                if(question==2){res = {owner:samplePerson}}
                 var df = function(){
-                   callback(res);
+                    res.label = questions[question].prettyAnswer(res);
+                    callback(res);
                 }
+                //pretend delay is actual server call
                 _.delay(df,1000)
             }
         };

@@ -33,9 +33,4 @@ angular.module('displacement.directives', []).directive('nodeView',['GraphDataSe
 			})
        });
 	}
-}}]).
-directive('answeredQuestion',function(){
-	return{
-		template: '<div class="answeredQuestion">Dan Janson owns 1234 Main Street</div>'
-	}
-})
+}}])
